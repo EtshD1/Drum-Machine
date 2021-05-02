@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const DrumPad = ({ name }: { name: string }) => {
-  return (<div id={`${name}Container`} className="drum-pad">
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleClick = () => {
+    audioRef.current?.play();
+  }
+
+  return (<div id={`${name}Container`} className="drum-pad" onClick={handleClick}>
     {name}
-    <audio id={name} className="clip" src="./audio/A.wav"></audio>
+    <audio ref={audioRef} id={name} className="clip" src={`./audio/${name}.wav`}></audio>
   </div>);
 }
 

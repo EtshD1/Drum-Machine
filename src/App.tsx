@@ -20,7 +20,6 @@ const App = () => {
   return (<div id="drum-machine">
     <div id="display"></div>
     <div>{drumpads}</div>
-    <h1>Hello, World!</h1>
   </div>);
 }
 
