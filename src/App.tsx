@@ -15,7 +15,7 @@ const keys = [
 ];
 
 const App = () => {
-  const drumpads = keys.map(key => <DrumPad name={key} />);
+  const drumpads = keys.map(key => <DrumPad name={key} key={key} />);
 
   return (<div id="drum-machine">
     <div id="display"></div>
