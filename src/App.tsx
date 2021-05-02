@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DrumPad from './Components/DrumPad';
 import './reset.css';
+import './index.css';
 
 const keys = [
   'Q',
@@ -25,8 +26,12 @@ const App = () => {
   const drumpads = keys.map(key => <DrumPad name={key} key={key} handleDisplay={handleDisplay} />);
 
   return (<div id="drum-machine">
-    <div id="display">{displayText}</div>
-    <div>{drumpads}</div>
+    <div id="display">
+      <div>Action:</div>
+      <div>{displayText}</div>
+      <div></div>
+    </div>
+    <div className="keysContainer">{drumpads}</div>
   </div>);
 }
 

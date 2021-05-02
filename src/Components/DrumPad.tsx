@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 const DrumPad = ({ name, handleDisplay }: { name: string, handleDisplay: Function }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const divRef = useRef<HTMLDivElement>(null);
 
   const handlePlay = () => {
     handleDisplay(name);
@@ -13,13 +14,23 @@ const DrumPad = ({ name, handleDisplay }: { name: string, handleDisplay: Functio
       if (e.key.toLocaleLowerCase() === name.toLocaleLowerCase()) {
         handleDisplay(name);
         audioRef.current?.play();
+        divRef.current?.classList.add("active");
+      }
+    }
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.key.toLocaleLowerCase() === name.toLocaleLowerCase()) {
+        divRef.current?.classList.remove("active");
       }
     }
     document.addEventListener('keydown', handleKeydown);
-    return () => document.removeEventListener('keydown', handleKeydown);
+    document.addEventListener('keyup', handleKeyUp);
+    return () => {
+      document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('keydown', handleKeyUp);
+    };
   }, [name, handleDisplay]);
 
-  return (<div id={`${name}Container`} className="drum-pad" onClick={handlePlay}>
+  return (<div ref={divRef} id={`${name}Container`} className="drum-pad" onClick={handlePlay}>
     {name}
     <audio ref={audioRef} id={name} className="clip" src={`./audio/${name}.wav`}></audio>
   </div>);
