@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Drum-Machine/static/css/main.a2dfafe6.chunk.css",
+    "main.js": "/Drum-Machine/static/js/main.34bd0499.chunk.js",
+    "main.js.map": "/Drum-Machine/static/js/main.34bd0499.chunk.js.map",
+    "runtime-main.js": "/Drum-Machine/static/js/runtime-main.e5465473.js",
+    "runtime-main.js.map": "/Drum-Machine/static/js/runtime-main.e5465473.js.map",
+    "static/js/2.724297dd.chunk.js": "/Drum-Machine/static/js/2.724297dd.chunk.js",
+    "static/js/2.724297dd.chunk.js.map": "/Drum-Machine/static/js/2.724297dd.chunk.js.map",
+    "index.html": "/Drum-Machine/index.html",
+    "static/css/main.a2dfafe6.chunk.css.map": "/Drum-Machine/static/css/main.a2dfafe6.chunk.css.map",
+    "static/js/2.724297dd.chunk.js.LICENSE.txt": "/Drum-Machine/static/js/2.724297dd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e5465473.js",
+    "static/js/2.724297dd.chunk.js",
+    "static/css/main.a2dfafe6.chunk.css",
+    "static/js/main.34bd0499.chunk.js"
+  ]
+}
