@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import DrumPad from './Components/DrumPad';
+import './reset.css';
+import './index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const keys = [
+  'Q',
+  'W',
+  'E',
+  'A',
+  'S',
+  'D',
+  'Z',
+  'X',
+  'C'
+];
+
+
+const App = () => {
+  const [displayText, setDisplayText] = useState("    ");
+
+  const handleDisplay = (text: string) => {
+    setDisplayText(text);
+  }
+
+  const drumpads = keys.map(key => <DrumPad name={key} key={key} handleDisplay={handleDisplay} />);
+
+  return (<div id="drum-machine">
+    <div id="display">
+      <div>Action:</div>
+      <div>{displayText}</div>
+      <div></div>
     </div>
-  );
+    <div className="keysContainer">{drumpads}</div>
+  </div>);
 }
 
 export default App;

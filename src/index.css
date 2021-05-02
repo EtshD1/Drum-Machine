@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  background-color: #2a324b;
+  height: 100vh;
+  width: 100vw;
+  color: #e1e5ee;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#display {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: #020122;
+  margin-bottom: 1rem;
+}
+
+#drum-machine {
+  background-color: #2b2d42;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: 0.25rem solid #1e1a1d80;
+}
+
+.keysContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.drum-pad {
+  flex: 0 0 30%;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  background-color: #f7c59f00;
+  border: 1px solid #ffffff77;
+  transition: background-color ease 1s;
+}
+
+.drum-pad:active,
+.drum-pad.active {
+  transition: background-color ease 250ms;
+  background-color: #f7c59f;
+}
+
+* {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
